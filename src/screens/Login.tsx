@@ -14,6 +14,25 @@ const Stack = createNativeStackNavigator();
 
 export function LoginPage_1({navigation}){
    const [username,setUsername] = useState('');
+   const [password,setPassword] = useState('');
+
+   function dologin()
+   {
+     if(username.length<=0)
+     {
+       Alert.alert("Please enter the valid username")
+     }
+     else if(password.length<=0)
+     {
+       Alert.alert("Please enter valid password")
+       return;
+     }
+     else
+     {
+      navigation.navigate('Home')
+
+     }
+   }
 
 
 
@@ -44,6 +63,7 @@ export function LoginPage_1({navigation}){
                   placeholder="Enter Password"
                   placeholderTextColor="black"
                   secureTextEntry={true}
+                  onChangeText={(value)=>setPassword(value)}
                    />
           </View>
 
@@ -51,7 +71,7 @@ export function LoginPage_1({navigation}){
               <Text style={styles.ForgotPassword}>Forgot Password?</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.lgnBtn} onPress={()=> navigation.navigate('Home')}>
+          <TouchableOpacity style={styles.lgnBtn} onPress={()=> dologin()}>
               <Text style={styles.lgnText}>LOGIN</Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={()=>navigation.navigate('SignUp')}>

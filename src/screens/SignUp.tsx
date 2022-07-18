@@ -1,8 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
 import {Image,TouchableOpacity, Pressable,Alert,Text, SafeAreaView, StyleSheet, View, ScrollView, TextInput} from "react-native";
+import { validateEmail } from "../helpers/helper";
+import { signupbk } from "../services/apiservice";
 
 function SignUp({navigation})
 {
+
+    const [username,setUsername] = useState('');
+    const [password,setPassword] = useState('');
+    function doregister()
+    {
+        if(username.length<=0)
+     {
+       Alert.alert("Please enter the valid username")
+       return;
+     }
+     if(!validateEmail(username))
+     {
+        Alert.alert("Please enter the valid email format")
+        return;
+
+     }
+     if(password.length<=0)
+     {
+       Alert.alert("Please enter valid password")
+       return;
+     }
+     
+
+    try{
+        signupbk(username,password)
+        navigation.goBack();
+
+    }
+    catch(e)
+    {
+        Alert.alert("error " +e);
+    }
+      
+
+   
+
+    }
     return(
         <SafeAreaView style={styles.wrapper}>
             {/* <Text style={styles.backbutton}>Go Back</Text> */}
@@ -16,15 +55,16 @@ function SignUp({navigation})
                 <TextInput style={styles.textInputs} placeholder="Gender" underlineColorAndroid={'transparent'}></TextInput>
                 <TextInput style={styles.textInputs} placeholder="Date Of Birth" underlineColorAndroid={'transparent'}></TextInput>
                 <TextInput style={styles.textInputs} placeholder="Contact" underlineColorAndroid={'transparent'}></TextInput>
-                <TextInput style={styles.textInputs} placeholder="Email Address" underlineColorAndroid={'transparent'}></TextInput>
-                <TextInput style={styles.textInputs} placeholder="........" underlineColorAndroid={'transparent'}></TextInput>
+                <TextInput style={styles.textInputs} placeholder="Email Address" underlineColorAndroid={'transparent'} onChangeText={(value) => setUsername(value)}
+                autoCapitalize="none" ></TextInput>
+                <TextInput style={styles.textInputs} placeholder="........" underlineColorAndroid={'transparent'} onChangeText={(value) => setPassword(value)} ></TextInput>
                 <Text style={styles.addressdetails}>Address Details</Text>
                 <TextInput style={styles.textInputs} placeholder="Apt/Building/Unit" underlineColorAndroid={'transparent'}></TextInput>
                 <TextInput style={styles.textInputs} placeholder="Street Name" underlineColorAndroid={'transparent'}></TextInput>
                 <TextInput style={styles.textInputs} placeholder="City" underlineColorAndroid={'transparent'}></TextInput>
                 <TextInput style={styles.textInputs} placeholder="Province" underlineColorAndroid={'transparent'}></TextInput>
                 <TextInput style={styles.textInputs} placeholder="Country" underlineColorAndroid={'transparent'}></TextInput>
-                <Pressable style={styles.buttons} onPress={()=> navigation.navigate('Login')}>
+                <Pressable style={styles.buttons} onPress={()=> doregister()}>
                 <Text style={styles.buttontext}>Submit</Text>
                 </Pressable>
                 <Pressable style={styles.buttons} onPress={()=> navigation.goBack()}>
