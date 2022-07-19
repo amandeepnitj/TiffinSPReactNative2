@@ -2,6 +2,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import React, { useState } from "react";
 import { Alert, Image, SafeAreaView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
+import { signin } from "../services/apiservice";
 import Forgotpassword from "./Forgotpassword";
 import HomePage from "./HomePage";
 import SignUp from "./SignUp";
@@ -21,17 +22,36 @@ export function LoginPage_1({navigation}){
      if(username.length<=0)
      {
        Alert.alert("Please enter the valid username")
+       return
      }
-     else if(password.length<=0)
+     if(password.length<=0)
      {
        Alert.alert("Please enter valid password")
        return;
      }
-     else
-     {
-      navigation.navigate('Home')
+     signin(username,password).then(()=>{
+       console.log('sign in success')
+       navigation.reset({
+         index:0,
+         routes: [{name: 'Home'}],
+       });
+     })
+     .catch(error=>{
+       console.log(error.code)
+       if(error.code ==='auth/invalid-email')
+       {
+         Alert.alert("Email provided is invalid")
+       }
+       else if(error.code==='auth/wrong-password')
+       {
+         Alert.alert("Entered password is wrong")
 
-     }
+       }
+       else
+       {
+         Alert.alert(error.code)
+       }
+     })
    }
 
 
@@ -54,6 +74,8 @@ export function LoginPage_1({navigation}){
                   placeholder="Enter UserName"
                   placeholderTextColor="black"
                   onChangeText={(value) => setUsername(value)} 
+                  keyboardType="email-address"
+                  autoCapitalize='none'
                   />
           </View>
          

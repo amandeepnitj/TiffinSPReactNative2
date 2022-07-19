@@ -21,3 +21,8 @@ export function signupbk(username,password){
   });
 
 }
+
+export function signin(username,password)
+{
+    return auth().signInWithEmailAndPassword(username,password);
+}

@@ -56,7 +56,8 @@ function SignUp({navigation})
                 <TextInput style={styles.textInputs} placeholder="Date Of Birth" underlineColorAndroid={'transparent'}></TextInput>
                 <TextInput style={styles.textInputs} placeholder="Contact" underlineColorAndroid={'transparent'}></TextInput>
                 <TextInput style={styles.textInputs} placeholder="Email Address" underlineColorAndroid={'transparent'} onChangeText={(value) => setUsername(value)}
-                autoCapitalize="none" ></TextInput>
+                autoCapitalize="none"
+                keyboardType="email-address" ></TextInput>
                 <TextInput style={styles.textInputs} placeholder="........" underlineColorAndroid={'transparent'} onChangeText={(value) => setPassword(value)} ></TextInput>
                 <Text style={styles.addressdetails}>Address Details</Text>
                 <TextInput style={styles.textInputs} placeholder="Apt/Building/Unit" underlineColorAndroid={'transparent'}></TextInput>
