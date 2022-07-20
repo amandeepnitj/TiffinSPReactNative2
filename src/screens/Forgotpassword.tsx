@@ -6,9 +6,9 @@ function Forgotpassword({navigation})
     return(
         <SafeAreaView style={styles.wrapper}>
             {/* <Text style={styles.backbutton}>Go Back</Text> */}
-            <TouchableOpacity onPress={()=> Alert.alert("back button touched")}>
+            {/* <TouchableOpacity onPress={()=> Alert.alert("back button touched")}>
         <Image source={require('./../images/left-arrow.png')} style={styles.backbutton}/>
-    </TouchableOpacity>
+    </TouchableOpacity> */}
             <View style={styles.mainview}>
                 <View style={styles.upperportion}>
                 <Text style={styles.forgottext}>Forgot Password</Text>
@@ -38,8 +38,8 @@ const styles = StyleSheet.create(
             flexDirection:'column',
             // borderColor:'red',
             // borderWidth:2,
-            marginLeft:15,
-            marginRight:15
+            backgroundColor:'white'
+           
         },
         backbutton:{
             // flex:0.06,
@@ -48,6 +48,8 @@ const styles = StyleSheet.create(
         },
         mainview:{
             flex:10,
+            marginLeft:15,
+            marginRight:15
             // backgroundColor:'skyblue'
         },
         upperportion:{
