@@ -42,6 +42,11 @@ const HomePage = ({ navigation }) => {
           });
 
         //
+      } else {
+        navigation.reset({
+          index: 0,
+          routes: [{ name: "Login" }],
+        });
       }
     });
   }, []);

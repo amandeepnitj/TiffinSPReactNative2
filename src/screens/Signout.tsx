@@ -15,11 +15,8 @@ export default function Signout({ navigation }) {
         console.log("sign out success");
 
         setTimeout(() => {
-          navigation.reset({
-            index: 0,
-            routes: [{ name: "Login" }],
-          });
-        }, 2000);
+          navigation.goBack();
+        }, 500);
       })
       .catch((error) => {
         console.log(error.code);
