@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AwesomeTSProject.iml" filepath="$PROJECT_DIR$/.idea/modules/AwesomeTSProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AwesomeTSProject.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AwesomeTSProject.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/437930406/AwesomeTSProject.react-native-firebase_app.iml" filepath="$PROJECT_DIR$/.idea/modules/437930406/AwesomeTSProject.react-native-firebase_app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-55983997/AwesomeTSProject.react-native-firebase_auth.iml" filepath="$PROJECT_DIR$/.idea/modules/-55983997/AwesomeTSProject.react-native-firebase_auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/2077895216/AwesomeTSProject.react-native-firebase_firestore.iml" filepath="$PROJECT_DIR$/.idea/modules/2077895216/AwesomeTSProject.react-native-firebase_firestore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1609580972/AwesomeTSProject.react-native-safe-area-context.iml" filepath="$PROJECT_DIR$/.idea/modules/1609580972/AwesomeTSProject.react-native-safe-area-context.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1075153092/AwesomeTSProject.react-native-screens.iml" filepath="$PROJECT_DIR$/.idea/modules/1075153092/AwesomeTSProject.react-native-screens.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/655814835/AwesomeTSProject.react-native-vector-icons.iml" filepath="$PROJECT_DIR$/.idea/modules/655814835/AwesomeTSProject.react-native-vector-icons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1555489174/react-native-gradle-plugin.iml" filepath="$PROJECT_DIR$/.idea/modules/1555489174/react-native-gradle-plugin.iml" />
+    </modules>
+  </component>
+</project>

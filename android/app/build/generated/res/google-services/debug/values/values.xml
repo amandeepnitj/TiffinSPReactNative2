@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">878277028572-dpmqps6g5v9skj1jv928gsng775neh46.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">878277028572</string>
+    <string name="google_api_key" translatable="false">AIzaSyBt7hwY8Yk2tGdHRwhhwnI8DoSpaMXorcs</string>
+    <string name="google_app_id" translatable="false">1:878277028572:android:18b069146796bb0172a219</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBt7hwY8Yk2tGdHRwhhwnI8DoSpaMXorcs</string>
+    <string name="google_storage_bucket" translatable="false">react-native-integration-f9e44.appspot.com</string>
+    <string name="project_id" translatable="false">react-native-integration-f9e44</string>
+</resources>
